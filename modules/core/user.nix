@@ -33,5 +33,7 @@
     ];
     shell = pkgs.fish;
   };
+
+  programs.fish.enable = true;
   nix.settings.allowed-users = [ "${username}" ];
 }

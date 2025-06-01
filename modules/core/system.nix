@@ -23,9 +23,9 @@
 
     };
   };
-  nixpkgs = {
-    overlays = [ inputs.nur.overlays.default ];
-  };
+  # nixpkgs = {
+  #   overlays = [ inputs.nur.overlays.default ];
+  # };
 
   environment.systemPackages = with pkgs; [
     vim
