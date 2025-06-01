@@ -20,13 +20,13 @@
     fcitx5.settings = {
       addons = {
         classicui.globalSection = {
-          Theme = "Material-Color-deepPurple";
-          DarkTheme = "Material-Color-deepPurple";
+          Theme = "Material-Color-teal";
+          DarkTheme = "Material-Color-teal";
           Font = "Maple Mono NF CN 20";
           MenuFont = "Maple Mono NF CN 20";
           TrayFont = "Maple Mono NF CN 20";
           # TrayOutlineColor = "#aa007f";
-          # EnableFractionalScale = "True";
+          EnableFractionalScale = "True";
         };
         pinyin.globalSection = {
           PageSize = 9;

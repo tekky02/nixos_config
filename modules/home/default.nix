@@ -41,5 +41,7 @@
     # ./xdg-mimes.nix                   # xdg config
     # ./zsh                             # shell
     ./input.nix
+    ./zoxide.nix
+    ./fish.nix
   ];
 }
