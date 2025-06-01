@@ -1,0 +1,4 @@
+{ ... }:
+{
+  imports = [ ./lazyvim.nix ];
+}

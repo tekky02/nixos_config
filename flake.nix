@@ -32,6 +32,16 @@
       };
     };
 
+    lazyvim = {
+      url = "github:matadaniel/LazyVim-module";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    LazyVim = {
+      url = "github:tekky02/lazyvim_config";
+      flake = false;
+    };
+
     # nur.url = "github:nix-community/NUR";
     # nix-gaming.url = "github:fufexan/nix-gaming";
 

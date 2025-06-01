@@ -1,7 +1,7 @@
-{ ... }:
+{ inputs, ... }:
 {
-  programs.neovim = {
+  imports = [ inputs.lazyvim.homeManagerModules.default ];
+  programs.lazyvim = {
     enable = true;
-    vimAlias = true;
   };
 }
