@@ -17,11 +17,10 @@ in
         "wl-clip-persist --clipboard both &"
         "wl-paste --watch cliphist store &"
         "waybar &"
-        # "swaync &"
+        "swaync &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
-        # "swww-daemon &"
-
-        "hyprlock"
+        "swww-daemon &"
+        # "hyprlock"
 
         # "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
         # "[workspace 1 silent] ${browser}"
@@ -81,7 +80,7 @@ in
       };
 
       decoration = {
-        rounding = 0;
+        rounding = 10;
         # active_opacity = 0.90;
         # inactive_opacity = 0.90;
         # fullscreen_opacity = 1.0;
@@ -124,7 +123,7 @@ in
 
           # Windows
           "windowsIn,   0, 4, easeOutCubic,  popin 20%" # window open
-          "windowsOut,  0, 4, fluent_decel,  popin 80%" # window close.
+          "windowsOut,  1, 7, default,  popin 80%" # window close.
           "windowsMove, 1, 2, fluent_decel, slide" # everything in between, moving, dragging, resizing.
 
           # Fade
@@ -135,7 +134,7 @@ in
           "fadeDim,     1, 4,   fluent_decel" # the easing of the dimming of inactive windows
           # "border,      1, 2.7, easeOutCirc"  # for animating the border's color switch speed
           # "borderangle, 1, 30,  fluent_decel, once" # for animating the border's gradient angle - styles: once (default), loop
-          "workspaces,  1, 4,   easeOutCubic, fade" # styles: slide, slidevert, fade, slidefade, slidefadevert
+          "workspaces, 1, 6, default" # styles: slide, slidevert, fade, slidefade, slidefadevert
         ];
       };
 
@@ -151,11 +150,12 @@ in
         "$mainMod, Return, exec, ${terminal}"
         # "ALT, Return, exec, [float; size 1111 700] ${terminal}"
         "$mainMod SHIFT, Return, exec, [fullscreen] ${terminal}"
-        "$mainMod, B, exec, [workspace 1 silent] ${browser}"
+        "$mainMod, B, exec, firefox"
         "$mainMod, Q, killactive,"
+	"$mainMod SHIFT, Q, exit,"
         "$mainMod, F, fullscreen, 0"
-        "$mainMod SHIFT, F, fullscreen, 1"
-        "$mainMod, Space, exec, wofi --show drun || pkill wofi"
+        "$mainMod SHIFT, F, fullscreen, 1" # fullscreen with bar
+        "$mainMod, Space, exec, rofi -show drun || pkill rofi"
         # "$mainMod SHIFT, D, exec, webcord --enable-features=UseOzonePlatform --ozone-platform=wayland"
         # "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
         "$mainMod, Escape, exec, swaylock"
@@ -265,6 +265,19 @@ in
         "$mainMod, mouse_down, workspace, e-1"
         "$mainMod, mouse_up, workspace, e+1"
 
+# ROG G15 Strix (2021) Specific binds
+	",156, exec, rog-control-center" # ASUS Armory crate key
+	",211, exec, asusctl profile -n; pkill -SIGRTMIN+8 waybar" # Fan Profile key switch between power profiles
+	",121, exec, pamixer -t" # Speaker Mute FN+F1
+	",122, exec, pamixer -d 5" # Volume lower key
+	",123, exec, pamixer -i 5" # Volume Higher key
+	",256, exec, pamixer --default-source -t" # Mic mute key
+	",232, exec, brightnessctl set 10%-" # Screen brightness down FN+F7
+	",233, exec, brightnessctl set 10%+" # Screen brightness up FN+F8
+	",237, exec, brightnessctl -d asus::kbd_backlight set 33%-" # Keyboard brightness down FN+F2
+	",238, exec, brightnessctl -d asus::kbd_backlight set 33%+" # Keyboard brightnes up FN+F3
+	",210, exec, asusctl led-mode -n" # Switch keyboard RGB profile FN+F4
+
         # clipboard manager
         # "$mainMod, V, exec, cliphist list | rofi -dmenu -theme-str 'window {width: 50%;} listview {columns: 1;}' | cliphist decode | wl-copy"
       ];
@@ -292,85 +305,9 @@ in
 
       # windowrule
       windowrule = [
-        "float,class:^(Viewnior)$"
-        "float,class:^(imv)$"
-        "float,class:^(mpv)$"
-        "tile,class:^(Aseprite)$"
-        "float,class:^(Audacious)$"
-        "pin,class:^(wofi)$"
-        "pin,class:^(waypaper)$"
-        # "idleinhibit focus,mpv"
-        # "float,udiskie"
-        "float,title:^(Transmission)$"
-        "float,title:^(Volume Control)$"
-        "float,title:^(Firefox — Sharing Indicator)$"
-        "move 0 0,title:^(Firefox — Sharing Indicator)$"
-        "size 700 450,title:^(Volume Control)$"
-        "move 40 55%,title:^(Volume Control)$"
-
-        "float, title:^(Picture-in-Picture)$"
-        "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
-        "pin, title:^(Picture-in-Picture)$"
-        "opacity 1.0 override 1.0 override, title:^(.*imv.*)$"
-        "opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
-        "opacity 1.0 override 1.0 override, class:(Aseprite)"
-        "opacity 1.0 override 1.0 override, class:(Unity)"
-        "opacity 1.0 override 1.0 override, class:(zen)"
-        "opacity 1.0 override 1.0 override, class:(evince)"
-        "workspace 1, class:^(${browser})$"
-        "workspace 3, class:^(evince)$"
-        "workspace 4, class:^(Gimp-2.10)$"
-        "workspace 4, class:^(Aseprite)$"
-        "workspace 5, class:^(Audacious)$"
-        "workspace 5, class:^(Spotify)$"
-        "workspace 8, class:^(com.obsproject.Studio)$"
-        "workspace 10, class:^(discord)$"
-        "workspace 10, class:^(WebCord)$"
-        "idleinhibit focus, class:^(mpv)$"
-        "idleinhibit fullscreen, class:^(firefox)$"
-        "float,class:^(org.gnome.Calculator)$"
-        "float,class:^(waypaper)$"
-        "float,class:^(zenity)$"
-        "size 850 500,class:^(zenity)$"
-        "size 725 330,class:^(SoundWireServer)$"
-        "float,class:^(org.gnome.FileRoller)$"
-        "float,class:^(org.pulseaudio.pavucontrol)$"
-        "float,class:^(SoundWireServer)$"
-        "float,class:^(.sameboy-wrapped)$"
-        "float,class:^(file_progress)$"
-        "float,class:^(confirm)$"
-        "float,class:^(dialog)$"
-        "float,class:^(download)$"
-        "float,class:^(notification)$"
-        "float,class:^(error)$"
-        "float,class:^(confirmreset)$"
-        "float,title:^(Open File)$"
-        "float,title:^(File Upload)$"
-        "float,title:^(branchdialog)$"
-        "float,title:^(Confirm to replace files)$"
-        "float,title:^(File Operation Progress)$"
-
-        "opacity 0.0 override,class:^(xwaylandvideobridge)$"
-        "noanim,class:^(xwaylandvideobridge)$"
-        "noinitialfocus,class:^(xwaylandvideobridge)$"
-        "maxsize 1 1,class:^(xwaylandvideobridge)$"
-        "noblur,class:^(xwaylandvideobridge)$"
-
-        # No gaps when only
-        "bordersize 0, floating:0, onworkspace:w[t1]"
-        "rounding 0, floating:0, onworkspace:w[t1]"
-        "bordersize 0, floating:0, onworkspace:w[tg1]"
-        "rounding 0, floating:0, onworkspace:w[tg1]"
-        "bordersize 0, floating:0, onworkspace:f[1]"
-        "rounding 0, floating:0, onworkspace:f[1]"
-
-        # "maxsize 1111 700, floating: 1"
-        # "center, floating: 1"
-
-        # Remove context menu transparency in chromium based apps
-        "opaque,class:^()$,title:^()$"
-        "noshadow,class:^()$,title:^()$"
-        "noblur,class:^()$,title:^()$"
+        "opacity 0.8 0.8,class:^(alacritty)$"
+	"opacity 0.95 0.95,class:^(firefox)$"
+	"float,title:QQ"
       ];
 
       # No gaps when only
@@ -382,7 +319,7 @@ in
     };
 
     extraConfig = "
-      monitor=,preferred,auto,auto
+      monitor=,highres,auto,auto
 
       xwayland {
         force_zero_scaling = true
