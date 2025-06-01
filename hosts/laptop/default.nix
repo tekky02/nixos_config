@@ -50,6 +50,13 @@
       # PCIE_ASPM_ON_AC = "default";
       # PCIE_ASPM_ON_BAT = "powersupersave";
     };
+
+    # ASUS ROG
+    supergfxd.enable = true;
+    asusd = {
+      enable = true;
+      enableUserService = true;
+    };
   };
 
   # powerManagement.cpuFreqGovernor = "performance";
