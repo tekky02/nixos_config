@@ -1,8 +1,8 @@
 { ... }:
 {
-	imports = [
-		./cli.nix
-		./dev.nix
-		./gui.nix
-	];
+  imports = [
+    ./cli.nix
+    ./dev.nix
+    ./gui.nix
+  ];
 }

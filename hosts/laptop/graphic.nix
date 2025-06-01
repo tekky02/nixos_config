@@ -19,4 +19,3 @@
   boot.kernelParams = [ "modprobe.blacklist=nouveau" ];
   hardware.nvidia.forceFullCompositionPipeline = true;
 }
-

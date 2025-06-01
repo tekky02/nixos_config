@@ -152,7 +152,7 @@ in
         "$mainMod SHIFT, Return, exec, [fullscreen] ${terminal}"
         "$mainMod, B, exec, firefox"
         "$mainMod, Q, killactive,"
-	"$mainMod SHIFT, Q, exit,"
+        "$mainMod SHIFT, Q, exit,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1" # fullscreen with bar
         "$mainMod, Space, exec, rofi -show drun || pkill rofi"
@@ -265,18 +265,18 @@ in
         "$mainMod, mouse_down, workspace, e-1"
         "$mainMod, mouse_up, workspace, e+1"
 
-# ROG G15 Strix (2021) Specific binds
-	",156, exec, rog-control-center" # ASUS Armory crate key
-	",211, exec, asusctl profile -n; pkill -SIGRTMIN+8 waybar" # Fan Profile key switch between power profiles
-	",121, exec, pamixer -t" # Speaker Mute FN+F1
-	",122, exec, pamixer -d 5" # Volume lower key
-	",123, exec, pamixer -i 5" # Volume Higher key
-	",256, exec, pamixer --default-source -t" # Mic mute key
-	",232, exec, brightnessctl set 10%-" # Screen brightness down FN+F7
-	",233, exec, brightnessctl set 10%+" # Screen brightness up FN+F8
-	",237, exec, brightnessctl -d asus::kbd_backlight set 33%-" # Keyboard brightness down FN+F2
-	",238, exec, brightnessctl -d asus::kbd_backlight set 33%+" # Keyboard brightnes up FN+F3
-	",210, exec, asusctl led-mode -n" # Switch keyboard RGB profile FN+F4
+        # ROG G15 Strix (2021) Specific binds
+        ",156, exec, rog-control-center" # ASUS Armory crate key
+        ",211, exec, asusctl profile -n; pkill -SIGRTMIN+8 waybar" # Fan Profile key switch between power profiles
+        ",121, exec, pamixer -t" # Speaker Mute FN+F1
+        ",122, exec, pamixer -d 5" # Volume lower key
+        ",123, exec, pamixer -i 5" # Volume Higher key
+        ",256, exec, pamixer --default-source -t" # Mic mute key
+        ",232, exec, brightnessctl set 10%-" # Screen brightness down FN+F7
+        ",233, exec, brightnessctl set 10%+" # Screen brightness up FN+F8
+        ",237, exec, brightnessctl -d asus::kbd_backlight set 33%-" # Keyboard brightness down FN+F2
+        ",238, exec, brightnessctl -d asus::kbd_backlight set 33%+" # Keyboard brightnes up FN+F3
+        ",210, exec, asusctl led-mode -n" # Switch keyboard RGB profile FN+F4
 
         # clipboard manager
         # "$mainMod, V, exec, cliphist list | rofi -dmenu -theme-str 'window {width: 50%;} listview {columns: 1;}' | cliphist decode | wl-copy"
@@ -306,8 +306,8 @@ in
       # windowrule
       windowrule = [
         "opacity 0.8 0.8,class:^(alacritty)$"
-	"opacity 0.95 0.95,class:^(firefox)$"
-	"float,title:QQ"
+        "opacity 0.95 0.95,class:^(firefox)$"
+        "float,title:QQ"
       ];
 
       # No gaps when only
