@@ -42,6 +42,10 @@
       flake = false;
     };
 
+    grub2-themes = {
+      url = "github:vinceliuice/grub2-themes";
+    };
+
     # nur.url = "github:nix-community/NUR";
     # nix-gaming.url = "github:fufexan/nix-gaming";
 
@@ -69,7 +73,10 @@
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/desktop ];
+          modules = [
+            ./hosts/desktop
+            inputs.grub2-themes.nixosModules.default
+          ];
           specialArgs = {
             host = "desktop";
             inherit self inputs username;
@@ -77,7 +84,11 @@
         };
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/laptop ];
+          modules = [
+            ./hosts/laptop
+
+            inputs.grub2-themes.nixosModules.default
+          ];
           specialArgs = {
             host = "laptop";
             inherit self inputs username;

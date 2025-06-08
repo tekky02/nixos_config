@@ -42,5 +42,6 @@
     ./input.nix
     ./zoxide.nix
     ./fish.nix
+    ./trans.nix
   ];
 }

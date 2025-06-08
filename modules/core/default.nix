@@ -2,11 +2,12 @@
 {
   imports = [
     ./bootloader.nix
-    # ./input.nix
+    ./grub.nix
     ./pipewire.nix
     ./podman.nix
     ./system.nix
     ./user.nix
     ./wayland.nix
+    ./thunar.nix
   ];
 }

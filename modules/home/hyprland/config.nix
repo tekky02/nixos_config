@@ -1,7 +1,8 @@
-{ ... }:
+{ host, ... }:
 let
   browser = "firefox";
   terminal = "alacritty";
+  exec_once_extra = if host == "laptop" then [ "poweralertd &" ] else [ ];
 in
 {
   wayland.windowManager.hyprland = {
@@ -12,20 +13,18 @@ in
         "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
-        # "nm-applet &"
-        "poweralertd &"
         "wl-clip-persist --clipboard both &"
         "wl-paste --watch cliphist store &"
         "waybar &"
         "swaync &"
-        "hyprctl setcursor Bibata-Modern-Ice 24 &"
+        "hyprctl setcursor Bibata-Modern-Ice 32 &"
         "swww-daemon &"
         # "hyprlock"
 
         # "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
         # "[workspace 1 silent] ${browser}"
         # "[workspace 2 silent] ${terminal}"
-      ];
+      ] ++ exec_once_extra;
 
       input = {
         # kb_layout = "us,fr";
@@ -295,7 +294,8 @@ in
       windowrule = [
         "opacity 0.8 0.8,class:^(alacritty)$"
         "opacity 0.95 0.95,class:^(firefox)$"
-        "float,title:QQ"
+        "float,title:^(图片查看器)$"
+        "center,title:^(图片查看器)$"
       ];
 
       # No gaps when only
@@ -306,8 +306,14 @@ in
       ];
     };
 
-    extraConfig = "
-monitor=,highres,auto,auto
+    extraConfig =
+      let
+        scale_main = if host == "desktop" then 1.875 else 1.5;
+        scale = if host == "desktop" then 1.875 else 1.5;
+      in
+      "
+monitor = DP-1, highres, auto, ${toString scale_main}
+monitor = HDMI-A-1, preferred, auto, ${toString scale}
 
 xwayland {
 force_zero_scaling = true

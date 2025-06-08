@@ -27,5 +27,7 @@
     # CLUTTER_BACKEND = "wayland";
     # GTK_THEME = "Colloid-Green-Dark-Gruvbox";
     # GRIMBLAST_HIDE_CURSOR = 0;
+    GDK_SCALE = 2;
+    XCURSOR_SIZE = 64;
   };
 }
