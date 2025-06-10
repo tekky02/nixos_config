@@ -24,7 +24,7 @@
     ./nvim.nix # neovim editor
     # ./obsidian.nix
     # ./p10k/p10k.nix
-    ./pkgs # other packages
+    ./../pkgs # other packages
     # ./retroarch.nix
     ./rofi.nix # launcher
     # ./scripts/scripts.nix             # personal scripts
@@ -42,6 +42,5 @@
     ./input.nix
     ./zoxide.nix
     ./fish.nix
-    ./trans.nix
   ];
 }
