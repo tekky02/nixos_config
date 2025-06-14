@@ -1,0 +1,4 @@
+{ ... }:
+{
+  programs.rmpc.enable = true;
+}

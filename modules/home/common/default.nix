@@ -1,6 +1,10 @@
 { ... }:
 {
   imports = [
+    ./hyprland # window manager
+    ./waybar # status bar
+    ./terminal # terminal
+    ./music_player
     # ./aseprite/aseprite.nix           # pixel art editor
     # ./audacious.nix                   # music player
     ./bat.nix # better cat command
@@ -16,8 +20,6 @@
     ./git.nix # version control
     # ./gnome.nix                       # gnome apps
     # ./gtk.nix                         # gtk theme
-    ./hyprland # window manager
-    ./terminal # terminal
     # ./lazygit.nix
     # ./micro.nix                       # nano replacement
     # ./nemo.nix                        # file manager
@@ -35,12 +37,11 @@
     ./swaync/swaync.nix # notification deamon
     # ./viewnior.nix                    # image viewer
     # ./vscodium                        # vscode fork
-    ./waybar # status bar
     ./waypaper.nix # GUI wallpaper picker
     # ./xdg-mimes.nix                   # xdg config
-    # ./zsh                             # shell
     ./input.nix
     ./zoxide.nix
     ./fish.nix
+    ./trans.nix
   ];
 }

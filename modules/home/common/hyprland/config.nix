@@ -1,7 +1,7 @@
 { host, ... }:
 let
   browser = "firefox";
-  terminal = "alacritty";
+  terminal = "kitty";
   exec_once_extra = if host == "laptop" then [ "poweralertd &" ] else [ ];
 in
 {
