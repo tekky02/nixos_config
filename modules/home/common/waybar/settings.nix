@@ -31,17 +31,16 @@ in
     modules-left = [
       "custom/launcher"
       "hyprland/workspaces"
-      "tray"
     ];
     modules-center = [ "clock" ];
     modules-right = [
       "cpu"
       "memory"
-      (if (host == "desktop") then "disk" else "")
+      "disk"
       "pulseaudio"
       "network"
       "battery"
-      "hyprland/language"
+      "tray"
       "custom/notification"
     ];
     clock = {
@@ -61,16 +60,16 @@ in
       format = "{icon}";
       on-click = "activate";
       format-icons = {
-        "1" = "I";
-        "2" = "II";
-        "3" = "III";
-        "4" = "IV";
-        "5" = "V";
-        "6" = "VI";
-        "7" = "VII";
-        "8" = "VIII";
-        "9" = "IX";
-        "10" = "X";
+        "1" = "1";
+        "2" = "2";
+        "3" = "3";
+        "4" = "4";
+        "5" = "5";
+        "6" = "6";
+        "7" = "7";
+        "8" = "8";
+        "9" = "9";
+        "10" = "10";
         sort-by-number = true;
       };
       persistent-workspaces = {
@@ -139,11 +138,6 @@ in
       format-time = "{H}h{M}m";
       tooltip = true;
       tooltip-format = "{time}";
-    };
-    "hyprland/language" = {
-      format = "<span foreground='#FABD2F'> </span> {}";
-      format-fr = "FR";
-      format-en = "US";
     };
     "custom/launcher" = {
       format = "";

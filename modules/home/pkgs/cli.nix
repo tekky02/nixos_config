@@ -9,7 +9,6 @@
     bitwise # cli tool for bit / hex manipulation
     caligula # User-friendly, lightweight TUI for disk imaging
     dysk # disk information
-    eza # ls replacement
     entr # perform action when file change
     fd # find replacement
     ffmpeg
@@ -25,7 +24,6 @@
     lowfi
     man-pages # extra man pages
     mimeo
-    mpv # video player
     ncdu # disk space
     nitch # systhem fetch util
     openssl

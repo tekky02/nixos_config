@@ -1,20 +1,18 @@
 { ... }:
 {
   imports = [
+    ./cli # command line tools
+    ./dev # develop
     ./hyprland # window manager
     ./waybar # status bar
     ./terminal # terminal
     ./music_player
     # ./aseprite/aseprite.nix           # pixel art editor
     # ./audacious.nix                   # music player
-    ./bat.nix # better cat command
     ./browser.nix # firefox based browser
-    ./btop.nix # resouces monitor
     ./cava.nix # audio visualizer
     # ./discord.nix                     # discord
-    ./fastfetch.nix # fetch tool
     # ./flow.nix                        # terminal text editor
-    ./fzf.nix # fuzzy finder
     # ./gaming.nix                      # packages related to gaming
     # ./ghostty.nix                     # terminal
     ./git.nix # version control
@@ -28,7 +26,7 @@
     # ./p10k/p10k.nix
     ./../pkgs # other packages
     # ./retroarch.nix
-    ./rofi.nix # launcher
+    ./rofi # launcher
     # ./scripts/scripts.nix             # personal scripts
     # ./ssh.nix                         # ssh config
     # ./superfile/superfile.nix         # terminal file manager
@@ -40,7 +38,6 @@
     ./waypaper.nix # GUI wallpaper picker
     # ./xdg-mimes.nix                   # xdg config
     ./input.nix
-    ./zoxide.nix
     ./fish.nix
     ./trans.nix
   ];

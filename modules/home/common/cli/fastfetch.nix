@@ -6,7 +6,7 @@
     {
       "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
       "logo": {
-        "source": "${../../../assets/logo/nixos-logo.png}",
+        "source": "${../../../../assets/logo/nixos-logo.png}",
         "type": "kitty-direct",
         "width": 33,
         "padding": {
@@ -72,7 +72,7 @@
           "keyColor": "32"
         },
         "break",
-       /* {
+        {
           "type": "cpu",
           "key": "╭─ ",
           "keyColor": "34",
@@ -102,17 +102,17 @@
         },
         {
           "type": "disk",
-          "key": "├─󰋊 ",
+          "key": "╰─󰋊 ",
           "keyColor": "34"
         },
-        {
+        /* {
           "type": "localip",
           "key": "╰─󱦂 ",
           "keyColor": "34",
           "showIpv4": true,
           "compact": true
-        },
-        "break", */
+        }, */
+        "break",
         {
           "type": "display",
           "key": "╭─󰹑 ",
