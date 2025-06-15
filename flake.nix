@@ -46,6 +46,12 @@
       url = "github:vinceliuice/grub2-themes";
     };
 
+    rose-pine-hyprcursor = {
+      url = "github:ndom91/rose-pine-hyprcursor";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hyprlang.follows = "hyprland/hyprlang";
+    };
+
     # nur.url = "github:nix-community/NUR";
     # nix-gaming.url = "github:fufexan/nix-gaming";
 

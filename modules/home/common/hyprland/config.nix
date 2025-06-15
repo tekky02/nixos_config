@@ -17,7 +17,7 @@ in
         "wl-paste --watch cliphist store &"
         "waybar &"
         "swaync &"
-        "hyprctl setcursor Bibata-Modern-Ice 32 &"
+        # "hyprctl setcursor Bibata-Modern-Ice 32 &"
         "swww-daemon &"
         # "hyprlock"
 

@@ -29,5 +29,7 @@
     # GRIMBLAST_HIDE_CURSOR = 0;
     GDK_SCALE = 2;
     XCURSOR_SIZE = 64;
+    HYPRCURSOR_THEME = "rose-pine-hyprcursor";
+    HYPRCURSOR_SIZE = 32;
   };
 }

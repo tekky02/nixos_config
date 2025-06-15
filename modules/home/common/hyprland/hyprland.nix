@@ -4,6 +4,7 @@
     swww
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     grim
     slurp
     wl-clip-persist
