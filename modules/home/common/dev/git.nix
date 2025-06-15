@@ -7,7 +7,7 @@
     userEmail = "tekkykk02@gmail.com";
 
     extraConfig = {
-      init.defaultBranch = "master";
+      init.defaultBranch = "main";
       merge.conflictstyle = "diff3";
       diff.colorMoved = "default";
       pull.ff = "only";

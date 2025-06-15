@@ -1,5 +1,6 @@
 { host, ... }:
 let
+  exploer = "thunar";
   browser = "firefox";
   terminal = "kitty";
   exec_once_extra = if host == "laptop" then [ "poweralertd &" ] else [ ];
@@ -178,15 +179,14 @@ in
           # show keybinds list
           "$mainMod, F1, exec, show-keybinds"
 
-          # keybindings
+          "$mainMode, E, exec, ${exploer}"
+          "$mainMod, B, exec, ${browser}"
           "$mainMod, Return, exec, ${terminal}"
-          # "ALT, Return, exec, [float; size 1111 700] ${terminal}"
           "$mainMod SHIFT, Return, exec, [fullscreen] ${terminal}"
-          "$mainMod, B, exec, firefox"
           "$mainMod, Q, killactive,"
           "$mainMod SHIFT, Q, exit,"
-          "$mainMod, F, fullscreen, 0"
-          "$mainMod SHIFT, F, fullscreen, 1" # fullscreen with bar
+          "$mainMod, F, fullscreen, 1" # fullscreen with bar
+          "$mainMod SHIFT, F, fullscreen, 0" # fullscreen without bar
           "$mainMod, Space, exec, rofi -show drun || pkill rofi"
           # "$mainMod SHIFT, D, exec, webcord --enable-features=UseOzonePlatform --ozone-platform=wayland"
           # "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"

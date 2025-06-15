@@ -1,4 +1,7 @@
-{ ... }:
+{ host, ... }:
+let
+  hyprcursor_size = if host == "desktop" then 48 else 32;
+in
 {
   home.sessionVariables = {
     # NIXOS_OZONE_WL = 1;
@@ -28,8 +31,8 @@
     # GTK_THEME = "Colloid-Green-Dark-Gruvbox";
     # GRIMBLAST_HIDE_CURSOR = 0;
     GDK_SCALE = 2;
-    XCURSOR_SIZE = 64;
+    XCURSOR_SIZE = 48;
     HYPRCURSOR_THEME = "rose-pine-hyprcursor";
-    HYPRCURSOR_SIZE = 32;
+    HYPRCURSOR_SIZE = hyprcursor_size;
   };
 }

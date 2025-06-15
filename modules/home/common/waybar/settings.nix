@@ -31,6 +31,7 @@ in
     modules-left = [
       "custom/launcher"
       "hyprland/workspaces"
+      "wlr/taskbar"
     ];
     modules-center = [ "clock" ];
     modules-right = [
@@ -38,7 +39,9 @@ in
       "memory"
       "disk"
       "pulseaudio"
+      "pulseaudio#microphone"
       "network"
+      "bluetooth"
       "battery"
       "tray"
       "custom/notification"
@@ -80,6 +83,12 @@ in
         "5" = [ ];
       };
     };
+    "wlr/taskbar" = {
+      format = "{icon}";
+      tooltip-format = "{name}: {title}";
+      ignore-list = [ "rofi" ];
+    };
+
     cpu = {
       format = "<span foreground='${green}'> </span> {usage}%";
       format-alt = "<span foreground='${green}'> </span> {avg_frequency} GHz";
@@ -105,19 +114,39 @@ in
       format-linked = "{ifname} (No IP)";
       format-disconnected = "<span foreground='${magenta}'>󰖪 </span>";
     };
+    bluetooth = {
+      format = "<span foreground='${green}'>󰂯</span>";
+      format-disabled = "<span foreground='${green}'>󰂲</span>"; # an empty format will hide the module
+      format-connected = "<span foreground='${green}'>󰂱</span>";
+      tooltip-format = "{device_alias}";
+      tooltip-format-connected = "{device_enumerate}";
+      tooltip-format-enumerate-connected = "{device_alias}";
+    };
     tray = {
       icon-size = 20;
       spacing = 8;
     };
     pulseaudio = {
       format = "{icon} {volume}%";
-      format-muted = "<span foreground='${blue}'> </span> {volume}%";
+      format-muted = "<span foreground='${blue}'> </span> Muted";
       format-icons = {
+        headphone = "<span foreground='${blue}'></span>";
+        hands-free = "<span foreground='${blue}'></span>";
+        headset = "<span foreground='${blue}'></span>";
         default = [ "<span foreground='${blue}'> </span>" ];
       };
       scroll-step = 2;
       on-click = "pamixer -t";
       on-click-right = "pavucontrol";
+    };
+    "pulseaudio#microphone" = {
+      format = "{format_source}";
+      format-source = "<span foreground='${cyan}'></span> {volume}%";
+      format-source-muted = "<span foreground='${cyan}'> </span>";
+      on-click = "pamixer --default-source -t";
+      on-scroll-up = "pamixer --default-source -i 5";
+      on-scroll-down = "pamixer --default-source -d 5";
+      scroll-step = 5;
     };
     battery = {
       format = "<span foreground='${yellow}'>{icon}</span> {capacity}%";

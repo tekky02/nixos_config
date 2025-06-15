@@ -15,7 +15,6 @@
     # ./flow.nix                        # terminal text editor
     # ./gaming.nix                      # packages related to gaming
     # ./ghostty.nix                     # terminal
-    ./git.nix # version control
     # ./gnome.nix                       # gnome apps
     # ./gtk.nix                         # gtk theme
     # ./lazygit.nix
