@@ -1,13 +1,13 @@
-{ host, ... }:
+{ host, lib, ... }:
 {
   programs.kitty = {
     enable = true;
 
-    themeFile = "gruvbox-dark-hard";
+    themeFile = "Catppuccin-Mocha";
 
     font = {
-      name = "Maple Mono";
-      size = if (host == "laptop") then 15 else 16;
+      name = lib.mkForce "Maple Mono";
+      size = lib.mkForce (if (host == "laptop") then 15 else 16);
     };
 
     extraConfig = ''
@@ -19,7 +19,7 @@
 
     settings = {
       confirm_os_window_close = 0;
-      background_opacity = "0.66";
+      background_opacity = lib.mkForce "0.8";
       scrollback_lines = 10000;
       enable_audio_bell = false;
       mouse_hide_wait = 60;

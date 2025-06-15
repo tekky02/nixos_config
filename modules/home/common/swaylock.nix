@@ -5,6 +5,7 @@
 
     package = pkgs.swaylock-effects;
 
+    /*
     settings = {
       clock = true;
       daemonize = true;
@@ -40,10 +41,11 @@
       text-color = "FBF1C7FF";
       inside-color = "3C3836DD";
       inside-ver-color = "3C3836DD";
-      inside-clear-color = "3C3836DD";
+      # inside-clear-color = "3C3836DD";
       inside-wrong-color = "3C3836DD";
       layout-bg-color = "FFFFFF00";
       layout-text-color = "FBF1C7FF";
     };
+    */
   };
 }

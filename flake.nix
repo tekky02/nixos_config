@@ -32,6 +32,11 @@
       };
     };
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     lazyvim = {
       url = "github:matadaniel/LazyVim-module";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -92,7 +97,6 @@
           inherit system;
           modules = [
             ./hosts/laptop
-
             inputs.grub2-themes.nixosModules.default
           ];
           specialArgs = {

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   home.sessionVariables = {
     GTK_IM_MODULE = "fcitx";
@@ -19,7 +19,7 @@
 
     fcitx5.settings = {
       addons = {
-        classicui.globalSection = {
+        classicui.globalSection = lib.mkForce {
           Theme = "Material-Color-teal";
           DarkTheme = "Material-Color-teal";
           Font = "Maple Mono NF CN 20";

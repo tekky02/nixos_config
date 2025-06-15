@@ -19,6 +19,7 @@
         fractional_scaling = 0;
       };
 
+      /* set in stylix
       background = [
         {
           monitor = "";
@@ -30,6 +31,7 @@
           vibrancy_darkness = 0.0;
         }
       ];
+      */
 
       shape = [
         # User box
@@ -83,6 +85,7 @@
         }
       ];
 
+      /* set in stylix
       input-field = [
         {
           monitor = "";
@@ -106,6 +109,7 @@
           valign = "bottom";
         }
       ];
+      */
     };
   };
 }

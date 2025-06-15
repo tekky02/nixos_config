@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   programs.alacritty = {
     enable = true;
@@ -6,12 +6,12 @@
     settings = {
       env.TERM = "xterm-256color";
       window = {
-        opacity = 0.8;
+        opacity = lib.mkForce 0.8;
       };
       font = {
-        size = 16;
+        size = lib.mkForce 16;
         normal = {
-          family = "Maple Mono NF CN";
+          family = lib.mkForce "Maple Mono NF CN";
         };
       };
     };
