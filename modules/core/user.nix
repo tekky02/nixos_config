@@ -3,6 +3,7 @@
   inputs,
   username,
   host,
+  system,
   ...
 }:
 {
@@ -10,7 +11,14 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs username host; };
+    extraSpecialArgs = {
+      inherit
+        inputs
+        username
+        host
+        system
+        ;
+    };
     users.${username} = {
       imports = if (host == "desktop") then [ ./../home/desktop ] else [ ./../home/laptop ];
       home.username = "${username}";

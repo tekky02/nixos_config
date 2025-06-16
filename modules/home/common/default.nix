@@ -5,7 +5,7 @@
     ./dev # develop
     ./hyprland # window manager
     ./music_player
-    ./nvim.nix # neovim editor
+    ./nvim # neovim editor
     ./rofi # launcher
     ./stylix
     ./swaync/swaync.nix # notification deamon
