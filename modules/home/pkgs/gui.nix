@@ -8,7 +8,6 @@
     # pavucontrol
     # pitivi # video editing
     # soundwireserver
-    vlc
 
     ## Office
     # libreoffice
@@ -17,7 +16,7 @@
     ## Utility
     # dconf-editor
     # gnome-disk-utility
-    # mission-center # GUI resources monitor
+    mission-center # GUI resources monitor
     # zenity
 
     ## Level editor
