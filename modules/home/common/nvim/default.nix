@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, system, ... }:
 {
-  imports = [ ./lazyvim.nix ];
+  home.packages = [ inputs.nixvim.packages.${system}.default ];
 }

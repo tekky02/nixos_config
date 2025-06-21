@@ -56,5 +56,6 @@
     pipes # terminal screensaver
     sl
     tty-clock # cli clock
+    grc
   ];
 }

@@ -37,6 +37,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:tekky02/nixvim";
+      # url = "git+file:///home/tekky/workspace/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     lazyvim = {
       url = "github:matadaniel/LazyVim-module";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -90,7 +96,12 @@
           ];
           specialArgs = {
             host = "desktop";
-            inherit self inputs username;
+            inherit
+              self
+              inputs
+              username
+              system
+              ;
           };
         };
         laptop = nixpkgs.lib.nixosSystem {
@@ -101,7 +112,12 @@
           ];
           specialArgs = {
             host = "laptop";
-            inherit self inputs username;
+            inherit
+              self
+              inputs
+              username
+              system
+              ;
           };
         };
         vm = nixpkgs.lib.nixosSystem {
