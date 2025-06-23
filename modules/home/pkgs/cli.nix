@@ -57,5 +57,7 @@
     sl
     tty-clock # cli clock
     grc
+
+    tmux
   ];
 }

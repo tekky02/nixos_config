@@ -314,6 +314,7 @@ in
       in
       "
 monitor = DP-1, highres, auto, ${toString scale_main}
+monitor = DP-4, highres, auto, ${toString scale_main}
 monitor = HDMI-A-1, preferred, auto, ${toString scale}
 
 xwayland {
