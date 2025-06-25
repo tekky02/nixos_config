@@ -4,6 +4,7 @@
     ./cli # command line tools
     ./dev # develop
     ./hyprland # window manager
+    ./multimedia
     ./music_player
     ./nvim # neovim editor
     ./rofi # launcher
