@@ -1,0 +1,93 @@
+/**
+ * rofi -dump-theme output.
+ * Rofi version: 1.7.8+wayland1
+ **/
+* {
+    border-col:   rgba ( 168, 153, 132, 100 % );
+    green:        rgba ( 152, 151, 26, 100 % );
+    grey:         rgba ( 189, 174, 147, 100 % );
+    bg-col-light: rgba ( 40, 40, 40, 100 % );
+    highlight:    var(green);
+    selected-col: rgba ( 60, 56, 54, 100 % );
+    fg-col2:      rgba ( 235, 219, 178, 100 % );
+    bg-col:       rgba ( 29, 32, 33, 100 % );
+    fg-col:       rgba ( 251, 241, 199, 100 % );
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+element-icon {
+    background-color: inherit;
+    size:             28px ;
+    text-color:       inherit;
+}
+mode-switcher {
+    background-color: inherit;
+    spacing:          0;
+    text-color:       inherit;
+}
+window {
+    width:            400px ;
+    background-color: var(bg-col);
+    border-color:     var(border-col);
+    height:           530px ;
+    border:           2px ;
+}
+mainbox {
+    background-color: var(bg-col);
+}
+inputbar {
+    padding:          0px ;
+    background-color: var(bg-col-light);
+    children:         [ "prompt","entry" ];
+    border-radius:    5px ;
+}
+prompt {
+    padding:          4px ;
+    background-color: var(green);
+    margin:           10px 0px 10px 10px ;
+    text-color:       var(bg-col-light);
+    border-radius:    3px ;
+}
+textbox-prompt-colon {
+    expand: false;
+    str:    ":";
+}
+entry {
+    padding:          6px ;
+    margin:           10px 10px 10px 5px ;
+    background-color: var(bg-col);
+    text-color:       var(fg-col);
+    border-radius:    3px ;
+}
+listview {
+    padding:          6px 0px 0px ;
+    margin:           10px 0px 0px 6px ;
+    background-color: var(bg-col);
+    columns:          1;
+    cycle:            true;
+    border:           0px ;
+}
+element {
+    padding:          8px ;
+    margin:           0px 10px 4px 4px ;
+    background-color: var(bg-col);
+    text-color:       var(fg-col);
+}
+element selected {
+    background-color: var(selected-col);
+    text-color:       var(fg-col2);
+    border-radius:    3px ;
+}
+button {
+    padding:          10px ;
+    background-color: var(bg-col-light);
+    vertical-align:   0.50;
+    horizontal-align: 0.50;
+    text-color:       var(grey);
+}
+button selected {
+    background-color: var(bg-col);
+    text-color:       var(green);
+}
