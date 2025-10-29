@@ -12,7 +12,11 @@
 
   boot.loader.grub2-theme =
     let
-      resolution = if host == "desktop" then "3840x2160" else "2560x1440";
+      resolution = if host == "desktop" then
+        "3840x2160"
+      else if host == "gtr7" then
+        "3840x2160"
+      else "2560x1440";
     in
     {
       enable = true;

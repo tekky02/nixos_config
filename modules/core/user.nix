@@ -20,7 +20,10 @@
         ;
     };
     users.${username} = {
-      imports = if (host == "desktop") then [ ./../home/desktop ] else [ ./../home/laptop ];
+      imports = if (host == "desktop") then
+        [ ./../home/desktop ]
+      else
+        [ ./../home/laptop ];
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "25.05";

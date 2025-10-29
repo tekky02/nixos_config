@@ -120,6 +120,22 @@
               ;
           };
         };
+        gtr7 = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/gtr7
+            inputs.grub2-themes.nixosModules.default
+          ];
+          specialArgs = {
+            host = "gtr7";
+            inherit
+              self
+              inputs
+              username
+              system
+              ;
+          };
+        };
         vm = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ ./hosts/vm ];
