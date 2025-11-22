@@ -30,8 +30,9 @@ in
     margin-right = 0;
     modules-left = [
       "custom/launcher"
-      "hyprland/workspaces"
-      "wlr/taskbar"
+      # "hyprland/workspaces"
+      "niri/workspaces"
+      #"wlr/taskbar"
     ];
     modules-center = [ "clock" ];
     modules-right = [
@@ -57,7 +58,7 @@ in
       tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
       format-alt = "  {:%d/%m}";
     };
-    "hyprland/workspaces" = {
+    "niri/workspaces" = {
       active-only = false;
       disable-scroll = true;
       format = "{icon}";

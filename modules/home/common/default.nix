@@ -3,10 +3,12 @@
   imports = [
     ./cli # command line tools
     ./dev # develop
+    ./fuzzel.nix
     ./hyprland # window manager
     ./multimedia
     ./music_player
     ./nvim # neovim editor
+    ./niri.nix
     ./rofi # launcher
     ./stylix
     ./swaync/swaync.nix # notification deamon
