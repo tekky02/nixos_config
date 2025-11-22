@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
   environment.variables = {
-    GTK_IM_MODULE = "fcitx";
+    # https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland
+    #GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
   };
