@@ -50,6 +50,20 @@
         "Mod+2".action = focus-workspace 2;
         "Mod+3".action = focus-workspace 3;
         "Mod+4".action = focus-workspace 4;
+
+        "XF86AudioRaiseVolume".action.spawn = [
+          "wpctl"
+          "set-volume"
+          "@DEFAULT_AUDIO_SINK@"
+          "0.1+"
+        ];
+        "XF86AudioLowerVolume".action.spawn = [
+          "wpctl"
+          "set-volume"
+          "@DEFAULT_AUDIO_SINK@"
+          "0.1-"
+        ];
+
       };
       layout = {
         focus-ring = {
