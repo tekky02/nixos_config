@@ -4,7 +4,7 @@
     ./cli # command line tools
     ./dev # develop
     ./fuzzel.nix
-    ./hyprland # window manager
+    # ./hyprland # window manager
     ./multimedia
     ./music_player
     #./nvim # neovim editor

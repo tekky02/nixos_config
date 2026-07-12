@@ -49,7 +49,6 @@
     xxd
 
     winetricks
-    wineWowPackages.wayland
 
     cbonsai # terminal screensaver
     cmatrix

@@ -8,7 +8,7 @@
     folder = ~/Pictures/wallpapers
     monitors = All
     wallpaper = ~/Pictures/wallpapers/shenli.png
-    backend = swww
+    backend = awww
     fill = fill
     sort = name
     color = #ffffff

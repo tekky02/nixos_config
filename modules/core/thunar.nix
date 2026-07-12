@@ -2,7 +2,7 @@
 {
   programs.thunar = {
     enable = true;
-    plugins = with pkgs.xfce; [ thunar-archive-plugin ];
+    plugins = with pkgs; [ thunar-archive-plugin ];
   };
 
   # enable preference changes
