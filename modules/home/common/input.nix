@@ -10,7 +10,7 @@
     enable = true;
     type = "fcitx5";
     fcitx5.addons = with pkgs; [
-      fcitx5-chinese-addons
+      # fcitx5-chinese-addons
       fcitx5-gtk # Fcitx5 gtk in module and glib based dbus client library
       fcitx5-material-color
       fcitx5-pinyin-zhwiki

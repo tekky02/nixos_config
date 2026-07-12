@@ -7,10 +7,10 @@
     ./hyprland # window manager
     ./multimedia
     ./music_player
-    ./nvim # neovim editor
+    #./nvim # neovim editor
     ./niri.nix
-    ./rofi # launcher
-    ./stylix
+    # ./rofi # launcher
+    #./stylix
     ./swaync/swaync.nix # notification deamon
     ./terminal # terminal
     ./waybar # status bar
